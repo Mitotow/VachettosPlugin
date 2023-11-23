@@ -1,0 +1,14 @@
+name: VachettosPlugin
+version: '${version}'
+main: fr.mitoto.vachettosplugin.Main
+api-version: '1.20'
+commands:
+  stats:
+    description: Consult your skills
+    usage: /<command>
+  players:
+    description: Consult online and offline players
+    usage: /<command>
+  craft:
+    description: Open a crafting table without place it on the ground
+    usage: /<command>
