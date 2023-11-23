@@ -31,18 +31,21 @@ public class StatsInventory implements Listener {
         setBorder(inventory);
 
         inventory.setItem(10, createStatItem(Material.PLAYER_HEAD, "Players Killed", PLAYER_KILLS));
-        inventory.setItem(11, createStatItem(Material.ZOMBIE_HEAD, "Entities Killed", MOB_KILLS));
+        inventory.setItem(11, createStatItem(Material.ZOMBIE_HEAD, "Mobs Killed", MOB_KILLS));
         inventory.setItem(12, createStatItem(Material.SKELETON_SKULL, "Deaths", DEATHS));
-        inventory.setItem(13, createStatItem(Material.NETHERITE_PICKAXE, "Mined Block", DAMAGE_ABSORBED));
-        inventory.setItem(14, createStatItem(Material.VILLAGER_SPAWN_EGG, "Trades With Villager", TRADED_WITH_VILLAGER));
+        inventory.setItem(13, createStatItem(Material.NETHERITE_CHESTPLATE, "Damage Absorbed", DAMAGE_ABSORBED));
+        inventory.setItem(14, createStatItem(Material.EMERALD, "Trades With Villager", TRADED_WITH_VILLAGER));
         inventory.setItem(15, createStatItem(Material.TOTEM_OF_UNDYING, "Raid Won", RAID_WIN));
-        inventory.setItem(16, createStatItem(Material.PILLAGER_SPAWN_EGG, "Raid Triggered", RAID_TRIGGER));
+        inventory.setItem(16, createStatItem(Material.BELL, "Raid Triggered", RAID_TRIGGER));
 
         return inventory;
     }
 
     private static void setBorder(Inventory inventory) {
         ItemStack borderItem = new ItemStack(Material.GREEN_STAINED_GLASS);
+        ItemMeta meta = borderItem.getItemMeta();
+        if(meta != null) meta.setDisplayName(ChatColor.MAGIC + "border");
+        borderItem.setItemMeta(meta);
         for(int i = 0; i<inventory.getSize(); i++)
             if(i <= 8 || (i >= 18 && i <= 26) || i % 9 == 0 || (i + 1) % 9 == 0)
                 inventory.setItem(i, borderItem);

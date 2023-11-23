@@ -1,6 +1,8 @@
 package fr.mitoto.vachettosplugin.commands;
 
+import fr.mitoto.vachettosplugin.Main;
 import fr.mitoto.vachettosplugin.inventories.StatsInventory;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,7 +15,6 @@ public class StatsCommand implements CommandExecutor {
             player.openInventory(StatsInventory.createInventory(player));
             return true;
         }
-
         return false;
     }
 }
