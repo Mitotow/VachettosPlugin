@@ -30,7 +30,7 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
-        e.setDeathMessage(ChatColor.BLACK + e.getEntity().getDisplayName() + ChatColor.WHITE + " died for the " + ChatColor.DARK_RED + e.getEntity().getStatistic(Statistic.DEATHS) + " time(s).");
+        e.setDeathMessage(ChatColor.BLACK + e.getEntity().getDisplayName() + ChatColor.WHITE + " died for the " + ChatColor.DARK_RED + e.getEntity().getStatistic(Statistic.DEATHS)+1 + " time(s).");
     }
 
     @EventHandler(priority = EventPriority.LOW)
