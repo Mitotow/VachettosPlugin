@@ -1,0 +1,29 @@
+statistics:
+  deaths:
+    title: "Deaths"
+    material: "PLAYER_HEAD"
+    statistic: "DEATHS"
+  player_kills:
+    title: "Players Killed"
+    material: "ZOMBIE_HEAD"
+    statistic: "PLAYER_KILLS"
+  mobs_killed:
+    title: "Mobs Killed"
+    material: "SKELETON_SKULL"
+    statistic: "MOB_KILLS"
+  damage_absorbed:
+    title: "Damage Absorbed"
+    material: "NETHERITE_CHESTPLATE"
+    statistic: "DAMAGE_ABSORBED"
+  traded_with_villager:
+    title: "Trades With Villager"
+    material: "EMERALD"
+    statistic: "TRADED_WITH_VILLAGER"
+  raid_win:
+    title: "Raid Won"
+    material: "TOTEM_OF_UNDYING"
+    statistic: "RAID_WIN"
+  raid_trigger:
+    title: "Raid Triggered"
+    material: "BELL"
+    statistic: "RAID_TRIGGER"

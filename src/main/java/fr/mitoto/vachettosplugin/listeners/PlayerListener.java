@@ -1,5 +1,6 @@
 package fr.mitoto.vachettosplugin.listeners;
 
+import fr.mitoto.vachettosplugin.configs.Messages;
 import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
@@ -15,28 +16,28 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        e.setJoinMessage(ChatColor.BLUE + e.getPlayer().getDisplayName() + ChatColor.WHITE + " joined.");
+        e.setJoinMessage(String.format(Messages.ON_PLAYER_JOIN, e.getPlayer().getDisplayName()));
     }
 
     @EventHandler
     public void onPlayerLeft(PlayerQuitEvent e) {
-        e.setQuitMessage(ChatColor.RED + e.getPlayer().getDisplayName() + ChatColor.WHITE + " left.");
+        e.setQuitMessage(String.format(Messages.ON_PLAYER_LEFT, e.getPlayer().getDisplayName()));
     }
 
     @EventHandler
     public void onPlayerKick(PlayerKickEvent e) {
-        e.setLeaveMessage(ChatColor.GOLD + e.getPlayer().getDisplayName() + ChatColor.WHITE + " kicked.");
+        e.setLeaveMessage(String.format(Messages.ON_PLAYER_KICK, e.getPlayer().getDisplayName()));
     }
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
-        e.setDeathMessage(ChatColor.BLACK + e.getEntity().getDisplayName() + ChatColor.WHITE + " died for the " + ChatColor.DARK_RED + e.getEntity().getStatistic(Statistic.DEATHS)+1 + " time(s).");
+        e.setDeathMessage(String.format(Messages.ON_PLAYER_DEATH, e.getEntity().getDisplayName(), e.getEntity().getStatistic(Statistic.DEATHS)));
     }
 
     @EventHandler(priority = EventPriority.LOW)
     public void onPlayerChat(AsyncPlayerChatEvent e) {
         Player player = e.getPlayer();
-        String message = ChatColor.LIGHT_PURPLE + player.getDisplayName() + ChatColor.WHITE + " » " + e.getMessage();
+        String message = String.format(Messages.ON_PLAYER_MESSAGE, player.getDisplayName(), e.getMessage());
         e.setFormat(message);
     }
 }
